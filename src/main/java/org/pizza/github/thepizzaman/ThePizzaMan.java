@@ -8,12 +8,15 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import org.pizza.github.thepizzaman.util.ModSetup;
 
 @Mod(Constants.MODID)
 public class ThePizzaMan {
 
     public ThePizzaMan(IEventBus modEventBus, ModContainer modContainer) {
         modEventBus.addListener(this::commonSetup);
+
+        ModSetup.register(modEventBus);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
